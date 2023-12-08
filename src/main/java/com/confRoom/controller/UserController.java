@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.confRoom.model.User;
-import com.confRoom.service.UserService;
+import com.confRoom.service.UserServiceImpl;
 
 @RestController
 public class UserController {
 
 	@Autowired
-	private UserService userService;
+	private UserServiceImpl userService;
 	
 	@PostMapping("/users")
 	public User addUser(@RequestBody User user)

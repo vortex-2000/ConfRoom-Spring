@@ -1,47 +1,16 @@
 package com.confRoom.repository;
 
-import com.confRoom.model.*;
+import java.util.Map;
+import java.util.TreeSet;
 
-
-import java.util.*;
-
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository   //if fail service
-public class BuildingRepository implements IBuildingRepository{
-	
-	private Map<Integer,Building> buildings;   
-	
-	private static BuildingRepository BuildingRepository_instance = null;
-	
-	private BuildingRepository() {
-		buildings=new HashMap<Integer,Building>();
-	}
-	
-	 public static synchronized BuildingRepository getInstance() 
-	    { 
-	        if (BuildingRepository_instance == null) 
-	        	BuildingRepository_instance = new BuildingRepository(); 
-	  
-	        return BuildingRepository_instance; 
-	    }
-	 
-	 	
-	 	
-	public Building getBuildingById(int id)
-	{
-		return buildings.get(id);
-	}
-		
+import com.confRoom.model.Booking;
+import com.confRoom.model.Building;
 
-	public Building addBuilding(Building building) {
-		buildings.put(building.getBuildingId(), building);
-		return building;
-		
-	}
-	
-	public Map<Integer,Building> getBuildings(){
-		return this.buildings;
-	}
+@Repository 
+public interface BuildingRepository extends JpaRepository<Building, Integer>{
 	
 }
+ 

@@ -1,6 +1,8 @@
 package com.confRoom.controller;
 
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.TreeSet;
 
@@ -20,13 +22,13 @@ import com.confRoom.exception.BookingStartException;
 import com.confRoom.exception.CustomExceptionResponse;
 import com.confRoom.model.Booking;
 import com.confRoom.model.BookingDTO;
-import com.confRoom.service.IBookingService;
+import com.confRoom.service.BookingService;
 
 @RestController
 public class BookingController {
 	
 	@Autowired
-	private IBookingService bookingService;
+	private BookingService bookingService;
 	
 	//LOCAL EXCEPTION HANDLER										//move this to common 
 	@ExceptionHandler(value= BookingStartException.class)
@@ -38,7 +40,7 @@ public class BookingController {
 	
 	
 	@GetMapping("/bookings")
-	public TreeSet<Booking> GetBooking(@RequestParam Optional<Integer> userIdInput,@RequestParam Optional<Integer> buildingIdInput,@RequestParam Optional<Integer> floorIdInput,@RequestParam Optional<Integer> confRoomIdInput,@RequestParam Optional<String> dateInput) throws ParseException
+	public List<Booking> GetBooking(@RequestParam Optional<Integer> userIdInput,@RequestParam Optional<Integer> buildingIdInput,@RequestParam Optional<Integer> floorIdInput,@RequestParam Optional<Integer> confRoomIdInput,@RequestParam Optional<String> dateInput) throws ParseException
 	{		
 		int userId  = userIdInput.orElse(-1);
 		if(userId==-1) {

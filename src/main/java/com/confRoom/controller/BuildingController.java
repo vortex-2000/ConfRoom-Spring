@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.confRoom.model.Building;
 import com.confRoom.service.BuildingService;
+import com.confRoom.service.BuildingServiceImpl;
 
 
 

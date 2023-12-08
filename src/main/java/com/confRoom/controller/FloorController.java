@@ -20,15 +20,16 @@ public class FloorController {
 	
 
 
-	@Autowired
-	private IFloorService floorService;
 	
+	@Autowired private FloorService floorService;
+
 	@PostMapping("/buildings/{buildingId}/floors") 
-	public Floor addFloor(@RequestBody Floor floor,@PathVariable int buildingId) throws Exception
-	{	
+	public Floor addFloor(@RequestBody Floor floor,@PathVariable int buildingId) throws Exception 
+	{ 
 		Floor resultFloor= floorService.addFloor(buildingId,floor);
-		return resultFloor;
+		return resultFloor; 
 	}
+
 	
 	
 }

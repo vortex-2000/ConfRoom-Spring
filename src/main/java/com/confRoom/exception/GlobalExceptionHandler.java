@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 
-import com.confRoom.service.BookingService;
+import com.confRoom.service.BookingServiceImpl;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
