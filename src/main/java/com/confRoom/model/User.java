@@ -1,5 +1,8 @@
 package com.confRoom.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,22 +25,11 @@ public class User {
 	@GeneratedValue
 	private int userId;
 	private String name;
+	private String userName;
+	private String password;
+	private ArrayList<String> roles;
 	
 	
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-	
-	public int getUserId() {
-		return this.userId;
-	}
 	
 }
