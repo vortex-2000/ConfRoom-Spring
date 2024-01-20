@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.ConfRoom.ConfRoomSpringApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.019 s <<< FAILURE! - in com.ConfRoom.ConfRoomSpringApplicationTests
+contextLoads  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.NoClassDefFoundError: com/azure/core/util/HttpClientOptions
+Caused by: java.lang.ClassNotFoundException: com.azure.core.util.HttpClientOptions
+
