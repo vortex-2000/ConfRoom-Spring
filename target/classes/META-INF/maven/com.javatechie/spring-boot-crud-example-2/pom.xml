@@ -16,7 +16,15 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<jib-maven-plugin.version>3.2.0</jib-maven-plugin.version>
+   <docker.image.prefix>confroomcontainer.azurecr.io</docker.image.prefix>
+		<property name="hibernate.connection.CharSet">utf8mb4</property> 
+<property name="hibernate.connection.characterEncoding">utf8</property>
+<property name="hibernate.connection.useUnicode">true</property>
+
+
 	</properties>
+	
 
 	<dependencies>
 		<dependency>
@@ -77,6 +85,8 @@
          <artifactId>spring-boot-starter-security</artifactId> 
       </dependency> 
       
+      
+      
       <dependency>
    <groupId>com.azure.spring</groupId>
    <artifactId>azure-spring-boot-starter-keyvault-certificates</artifactId>
@@ -86,6 +96,44 @@
     <groupId>com.azure.spring</groupId>
     <artifactId>spring-cloud-azure-starter</artifactId>
     <version>4.2.0</version>
+</dependency>
+
+<dependency>
+      <groupId>com.azure.spring</groupId>
+      <artifactId>spring-cloud-azure-dependencies</artifactId>
+      <version>5.8.0</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-identity</artifactId>
+      <version>1.2.0</version>
+       </dependency>
+       
+     <!-- https://mvnrepository.com/artifact/com.azure/azure-storage-blob -->  
+<dependency>  
+ <groupId>com.azure</groupId>  
+ <artifactId>azure-storage-blob</artifactId>  
+ <version>12.20.0</version>  
+</dependency>  
+  
+  
+<!-- https://mvnrepository.com/artifact/com.azure/azure-core -->  
+<dependency>  
+ <groupId>com.azure</groupId>  
+ <artifactId>azure-core</artifactId>  
+ <version>1.33.0</version>  
+</dependency>  
+  
+  
+<!-- https://mvnrepository.com/artifact/com.azure/azure-identity -->  
+<dependency>  
+ <groupId>com.azure</groupId>  
+ <artifactId>azure-identity</artifactId>  
+ <version>1.7.0-beta.2</version>  
+ <scope>compile</scope>  
 </dependency>
 		
 	</dependencies>
